@@ -14,7 +14,7 @@ app.use(cors({
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
-app.options("*", cors());
+
 
 app.use(express.json());
 
@@ -56,8 +56,8 @@ app.post("/register", async (req, res) => {
 
   }
 });
-
+const PORT = process.env.PORT || 5000;
 // Server Start
-app.listen(process.env.PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${process.env.PORT}`);
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
